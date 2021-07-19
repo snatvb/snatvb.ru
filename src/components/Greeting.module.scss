@@ -1,0 +1,149 @@
+@use "sass:math";
+@import '../styles/variables.scss';
+
+$logo-size: 30%;
+$show-time: 700ms;
+$hide-delay: $show-time;
+$hide-time: 1300ms;
+$logo-color: $text-color;
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.logo {
+  fill: #eee;
+  width: $logo-size;
+  height: $logo-size;
+  animation: logoShow $show-time cubic-bezier(0, 0, 0, 1) forwards;
+
+  &-fake {
+    position: absolute;
+    width: $logo-size;
+    height: $logo-size;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-mask-image: url('logo.svg');
+    -webkit-mask-mode: match-source;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: contain;
+    mask-image: url('logo.svg');
+    mask-mode: match-source;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+    opacity: 0;
+    animation: logoHide $hide-time cubic-bezier(0.2, 0.1, 0.4, 0.6) $hide-delay forwards;
+  }
+}
+
+.line {
+  position: absolute;
+  height: 80%;
+  top: 10%;
+  left: 0;
+  border-radius: 3px;
+  background-color: #eee;
+}
+
+// prettier-ignore
+$line-colors: 
+#F20530,
+#455D73,
+#F2CB05,
+#F25C05,
+#84BF04,
+#F23005,
+rgb(30, 139, 190),
+#F2E205,
+#F20544,
+rgb(200, 49, 90);
+
+// prettier-ignore
+$line-direction-factors: 
+1,
+0,
+.3,
+-1.8,
+0.4,
+0.1,
+1.3,
+-1,
+1.4,
+-1.6,
+0.5;
+
+@for $i from 1 through 20 {
+  $width: 5%;
+  $partIndex: ($i % 10) + 1;
+  .line-#{$i} {
+    width: $width;
+    left: ($i - 1) * $width;
+    animation: lineAnimation_#{$i} $hide-time ease $hide-delay forwards;
+  }
+
+  @keyframes lineAnimation_#{$i} {
+    0% {
+      width: $width;
+      transform: translateX(0px);
+      box-shadow: 0px 0px 0px 0px nth($line-colors, $partIndex);
+    }
+
+    20% {
+      left: ($i * $width) + (-2% * nth($line-direction-factors, $partIndex));
+    }
+
+    85% {
+      box-shadow: 0px 0px 40px 5px nth($line-colors, $partIndex);
+    }
+
+    100% {
+      width: 0%;
+      left: ($i * $width) + (4% * nth($line-direction-factors, $partIndex));
+      background-color: nth($line-colors, $partIndex);
+      box-shadow: 0px 0px 0px 0px nth($line-colors, $partIndex);
+    }
+  }
+}
+
+@keyframes logoShow {
+  0% {
+    opacity: 0;
+    transform: scale(3);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  99.9999% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes logoHide {
+  0% {
+    width: $logo-size;
+    height: $logo-size;
+    opacity: 1;
+  }
+
+  100% {
+    width: 150%;
+    height: 150%;
+    opacity: 1;
+  }
+}

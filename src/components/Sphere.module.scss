@@ -1,0 +1,22 @@
+@import '../styles/variables.scss';
+
+.base {
+  font-size: 1px;
+  position: relative;
+  width: 100em;
+  height: 100em;
+  border-radius: 9999em;
+  background-color: lighten($color: $background-color, $amount: 3%);
+  box-shadow: 16em -16em 16em 0em rgba(167, 202, 229, 0.05) inset, -6em 6em 16em 0em rgba(167, 202, 229, 0.04) inset;
+}
+
+.flare {
+  position: absolute;
+  right: 30%;
+  top: 30%;
+  width: 8%;
+  height: 8%;
+  border-radius: 9999px;
+  background-color: lighten($color: rgba(232, 228, 179, 0.55), $amount: 3%);
+  filter: blur(5px);
+}

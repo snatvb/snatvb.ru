@@ -1,0 +1,67 @@
+{
+  "name": "snatvb-portfolio",
+  "version": "0.1.0",
+  "author": "snatvb",
+  "license": "MIT",
+  "keywords": [
+    "ReasonML",
+    "BuckleScript",
+    "reason-react",
+    "ReScript",
+    "rescript-react",
+    "react",
+    "snatvb",
+    "portfolio",
+    "react"
+  ],
+  "scripts": {
+    "build": "snowpack build",
+    "clean": "rescript clean",
+    "format": "npm run format:js && npm run format:res",
+    "format:js": "prettier --write \"**/*.{js,json,md,yml}\"",
+    "format:res": "rescript format -all",
+    "start": "snowpack dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@mojs/core": "^1.1.0",
+    "@rescript/react": "^0.10.3",
+    "@ryyppy/rescript-promise": "^2.1.0",
+    "add": "^2.0.6",
+    "classnames": "^2.3.1",
+    "dompurify": "^2.2.9",
+    "marked": "^2.1.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-transition-group": "^4.4.2",
+    "yarn": "^1.22.10"
+  },
+  "devDependencies": {
+    "@jihchi/plugin-rescript": "^1.0.0",
+    "@snowpack/plugin-dotenv": "^2.1.0",
+    "@snowpack/plugin-react-refresh": "^2.5.0",
+    "@snowpack/plugin-sass": "^1.4.0",
+    "bs-fetch": "^0.6.2",
+    "bs-webapi": "^0.19.1",
+    "prettier": "^2.3.1",
+    "rescript": "^9.1.4",
+    "snowpack": "~3.0"
+  },
+  "eslintConfig": {
+    "ignorePatterns": [
+      "src/**/*.bs.js"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

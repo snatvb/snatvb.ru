@@ -1,0 +1,55 @@
+@import './variables.scss';
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  width: 100%;
+  height: 100%;
+  color: $text-color;
+  background-color: $background-color;
+  font-family: 'Roboto', sans-serif;
+}
+
+.site-layout-background {
+  background-color: $background-color;
+}
+
+.full-size {
+  width: 100%;
+  height: 100%;
+}
+
+.page {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  &-enter {
+    opacity: 0;
+    transform: scale(1.1);
+
+    &-active {
+      opacity: 1;
+      transform: scale(1);
+      transition: opacity 3000ms, transform 3000ms;
+    }
+  }
+
+  &-exit {
+    opacity: 1;
+
+    &-active {
+      opacity: 0;
+      transition: opacity 3000ms;
+    }
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
