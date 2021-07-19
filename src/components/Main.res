@@ -1,68 +1,35 @@
 @module("./Main.module.scss") external styles: {..} = "default"
 open CX
 
-let inList = (list_: list<string>, str: string) =>
-  switch list_ {
-  | list{str} => true
-  | _ => false
-  }
-
 @react.component
 let make = () => {
-  let nodeRef = React.useRef(Js.Nullable.null)
   let url = RescriptReactRouter.useUrl()
+  let transitions = RSpring.useTransition(
+    url,
+    RSpring.makeOptions(
+      ~from=ReactDOM.Style.make(~opacity="0", ()),
+      ~enter=ReactDOM.Style.make(~opacity="1", ()),
+      ~leave=ReactDOM.Style.make(~opacity="0", ()),
+      ~config=Some(RSpring.makeConfig(~duration=150, ())),
+      (),
+    ),
+  )
   Js.log(url.path->Belt.List.reduce("", Js.String.concat))
 
   <div className={styles["base"]}>
     <header className={styles["header"]}> <Menu /> </header>
     <main className={cx([styles["content"], Some("full-size")])}>
-      <CSSTransition.Group className={styles["group"]}>
-        // <CSSTransition
-        //   nodeRef={ReactDOM.Ref.domRef(nodeRef)}
-        //   unmountOnExit={true}
-        //   \"in"={true}
-        //   key={url.path->Belt.List.reduce("", Js.String.concat)}
-        //   classNames="page"
-        //   timeout={3000}>
-        //   <div ref={ReactDOM.Ref.domRef(nodeRef)} className="page">
-        //     {switch url.path {
-        //     | list{} => <Home />
-        //     | list{"deal"} => <Deal />
-        //     | _ => <Home />
-        //     }}
-        //   </div>
-        // </CSSTransition>
-        // <CSSTransition
-        //   unmountOnExit={true}
-        //   // \"in"={true}
-        //   key={inList(url.path, "")}
-        //   classNames="page"
-        //   timeout={3000}>
-        //   <div className="page"> <Home /> </div>
-        // </CSSTransition>
-        // <CSSTransition
-        //   unmountOnExit={true}
-        //   // \"in"={true}
-        //   key={inList(url.path, "deal")}
-        //   classNames="page"
-        //   timeout={3000}>
-        //   <div className="page"> <Deal /> </div>
-        // </CSSTransition>
-        <CSSTransition
-          unmountOnExit={true}
-          \"in"={true}
-          key={url.path->Belt.List.reduce("", Js.String.concat)}
-          classNames="page"
-          timeout={3000}>
-          <div className="page">
-            {switch url.path {
+      <div className={styles["body"]}>
+        {transitions((style, item) => {
+          <RSpring.Animated.Div style className="page">
+            {switch item["path"] {
             | list{} => <Home />
             | list{"deal"} => <Deal />
             | _ => <Home />
             }}
-          </div>
-        </CSSTransition>
-      </CSSTransition.Group>
+          </RSpring.Animated.Div>
+        })}
+      </div>
     </main>
   </div>
 }

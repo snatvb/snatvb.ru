@@ -5,7 +5,7 @@
   height: 100%;
   position: relative;
   padding: 0.1px;
-  mix-blend-mode: lighten;
+  background-color: $background-color;
 }
 
 .photo {
@@ -21,6 +21,7 @@
     top: 0;
     overflow: hidden;
     z-index: 0;
+    mix-blend-mode: lighten;
   }
 }
 
