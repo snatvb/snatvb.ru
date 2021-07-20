@@ -1,6 +1,159 @@
 {
   "author": {
     "name": "Andrew Avsenin",
-    "description": "UI Team-lead Wargaming"
-  }
+    "description": "UI Team-Lead Wargaming"
+  },
+  "now-date": "Now",
+  "works": [
+    {
+      "isActive": true,
+      "name": "Wargaming (CООО Гейм Стрим)",
+      "site": "wargaming.net",
+      "city": "Minsk",
+      "country": "Belarus",
+      "date": {
+        "from": 1577836800000,
+        "to": "now"
+      },
+      "position": "UI TeamLead",
+      "description": "Development in WoT Group. We develop UI of World of Tanks, site-portal of the game and another web-services. I responsible for my team, code quality and development processes. Also I help to write difficult systems and take part in the tech and architectural decisions.",
+      "stack": [
+        "TypeScript",
+        "GameFace",
+        "Webpack",
+        "MobX",
+        "C++",
+        "Management Team",
+        "Redux Sagas"
+      ]
+    },
+    {
+      "isActive": false,
+      "name": "Yzer Lab",
+      "city": "Moscow",
+      "country": "Russia",
+      "date": {
+        "from": 1470009600000,
+        "to": 1575158400000
+      },
+      "position": "Senior Front-end Developer",
+      "description": "It was internet chat like Telegram. There was translations on any languages by one click on icon near message. Calls appeared there earlier than in Telegram (with video). There was encryption from the beginning. I worked with all of this. We used a functionally reactive program system.",
+      "stack": [
+        "TypeScript",
+        "Flow",
+        "NodeJS",
+        "React",
+        "Redux",
+        "Redux Sagas",
+        "Ramda",
+        "CircleCI",
+        "Docker",
+        "WebSocket",
+        "WebRTC",
+        "Protobuf",
+        "Electron",
+        "Webpack"
+      ]
+    },
+    {
+      "isActive": false,
+      "name": "Покорми Зверя",
+      "city": "Moscow",
+      "country": "Russia",
+      "date": {
+        "from": 1470009600000,
+        "to": 1480550400000
+      },
+      "position": "Middle Front-end Developer",
+      "description": "It was internet shop by feed for animals. There was own MVC framework on base jQuery.",
+      "stack": ["JS", "jQuery"]
+    },
+    {
+      "isActive": false,
+      "name": "DigitalWand",
+      "city": "Moscow",
+      "country": "Russia",
+      "site": "digitalwand.ru",
+      "date": {
+        "from": 1446336000000,
+        "to": 1470009600000
+      },
+      "position": "Middle Front-end Developer",
+      "description": "Development and support sites by orders. It was outsource company. Also I charged of management an application one of client in Apple Store (testing, updating).",
+      "stack": ["JS", "Knockout", "Angular", "React", "Ionic"]
+    },
+    {
+      "isActive": false,
+      "name": "ArtLand",
+      "city": "Lipetsk",
+      "country": "Russia",
+      "date": {
+        "from": 1433116800000,
+        "to": 1443657600000
+      },
+      "position": "Full-stack Developer",
+      "description": "Development and support sites by orders. Development own task tracker and CRM system.",
+      "stack": [
+        "Python",
+        "Django",
+        "PostgreSQL",
+        "Sphinx",
+        "DevOps",
+        "JS",
+        "Knockout",
+        "Angular",
+        "jQuery",
+        "AJAX"
+      ]
+    },
+    {
+      "isActive": false,
+      "name": "Покупатель 24",
+      "city": "Moscow",
+      "country": "Russia",
+      "date": {
+        "from": 1401580800000,
+        "to": 1422748800000
+      },
+      "position": "Front-end Developer",
+      "description": "I was the only developer in Front-end. It was project work. I've done my part and we're done cooperating.",
+      "stack": [
+        "Cross Browsers",
+        "HTML5",
+        "CSS3",
+        "SASS",
+        "CoffeeScript",
+        "Vanilla JS",
+        "jQuery",
+        "AJAX"
+      ]
+    },
+    {
+      "isActive": false,
+      "name": "Filanko (hoster.ru)",
+      "site": "hoster.ru",
+      "city": "Moscow",
+      "country": "Russia",
+      "date": {
+        "from": 1388534400000,
+        "to": 1388534400000
+      },
+      "position": "Front-end Developer",
+      "description": "Development of an admin panel for clients. There wasn't frameworks, only pure JS. I needed to leave for family reasons.",
+      "stack": ["Vanilla JS", "jQuery", "AJAX"]
+    },
+    {
+      "isActive": false,
+      "name": "Отклик",
+      "city": "Lipetsk",
+      "country": "Russia",
+      "date": {
+        "from": 1356998400000,
+        "to": 1385856000000
+      },
+      "position": "Front-end Developer",
+      "description": "Making HTML layout, fixing bugs, developing simple animations. Development of government and private orders. It was piecework.",
+      "stack": ["Vanilla JS", "jQuery", "AJAX"]
+    }
+  ]
 }

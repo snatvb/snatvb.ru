@@ -1,4 +1,26 @@
+@module("./Deal.module.scss") external styles: {..} = "default"
+
 @react.component
 let make = React.memo(() => {
-  <div> {React.string("Deal")} </div>
+  let {locale} = LocaleContext.useLocaleContext()
+
+  <div className={styles["base"]}>
+    <Timeline>
+      {locale
+      ->LocaleContext.get(["works"])
+      ->LocaleContext.toArray
+      ->Belt.Array.mapWithIndex((index, item) => {
+        React.createElement(
+          Timeline.Item.make,
+          Js.Obj.assign(
+            LocaleContext.toObject(item),
+            {
+              "key": index->Belt.Int.toString,
+            },
+          ),
+        )
+      })
+      ->React.array}
+    </Timeline>
+  </div>
 })

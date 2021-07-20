@@ -1,3 +1,156 @@
 {
-  "name": "Андрей Авсенин"
+  "name": "Андрей Авсенин",
+  "now-date": "Now",
+  "works": [
+    {
+      "isActive": true,
+      "name": "Wargaming (CООО Гейм Стрим)",
+      "site": "wargaming.net",
+      "city": "Minsk",
+      "country": "Belarus",
+      "date": {
+        "from": 1577836800000,
+        "to": "now"
+      },
+      "position": "UI TeamLead",
+      "description": "Разработка в WoT Group. Мы разрабатываем UI для World of Tanks, сайт-портал игры и другие web-сервисы. Я отвечаю за свою команду, качество кода и процесс разработки. Так же я помогаю в написании сложных систем и принимаю участие в технических и архитектурных решениях.",
+      "stack": [
+        "TypeScript",
+        "GameFace",
+        "Webpack",
+        "MobX",
+        "C++",
+        "Management Team",
+        "Redux Sagas"
+      ]
+    },
+    {
+      "isActive": false,
+      "name": "Yzer Lab",
+      "city": "Москва",
+      "country": "Россия",
+      "date": {
+        "from": 1470009600000,
+        "to": 1575158400000
+      },
+      "position": "Senior Front-end Developer",
+      "description": "Это был чат похожий на Telegram. Там были переводы по одному клику мышки рядом с сообщением с любого языка на тот, который вы выберите. Звонки и видеозвонки появились раньше чем в Telegram. Было шифрование со старта. Я работал над всеми аспектами клиентской части. Мы использование функционально-реактивное программирование.",
+      "stack": [
+        "TypeScript",
+        "Flow",
+        "NodeJS",
+        "React",
+        "Redux",
+        "Redux Sagas",
+        "Ramda",
+        "CircleCI",
+        "Docker",
+        "WebSocket",
+        "WebRTC",
+        "Protobuf",
+        "Electron",
+        "Webpack"
+      ]
+    },
+    {
+      "isActive": false,
+      "name": "Покорми Зверя",
+      "city": "Москва",
+      "country": "Россия",
+      "date": {
+        "from": 1470009600000,
+        "to": 1480550400000
+      },
+      "position": "Middle Front-end Developer",
+      "description": "Это был интернет магазин по продаже кормов для животных по модели подписки. На проекте не было никаких фреймворков, только самописный MVC с использованием jQuery.",
+      "stack": ["JS", "jQuery"]
+    },
+    {
+      "isActive": false,
+      "name": "DigitalWand",
+      "city": "Москва",
+      "country": "Россия",
+      "site": "digitalwand.ru",
+      "date": {
+        "from": 1446336000000,
+        "to": 1470009600000
+      },
+      "position": "Middle Front-end Developer",
+      "description": "Разработка и поддержка сайтов на заказ. Эта была аутсорсинговая компания. Так же я был отвественным за управление приложением клиента в Apple Store (тестирование, обновление).",
+      "stack": ["JS", "Knockout", "Angular", "React", "Ionic"]
+    },
+    {
+      "isActive": false,
+      "name": "ArtLand",
+      "city": "Липецк",
+      "country": "Россия",
+      "date": {
+        "from": 1433116800000,
+        "to": 1443657600000
+      },
+      "position": "Full-stack Developer",
+      "description": "Разработка и поддержка сайтов на заказ. Разработка собственно трекера задач и CRM системы.",
+      "stack": [
+        "Python",
+        "Django",
+        "PostgreSQL",
+        "Sphinx",
+        "DevOps",
+        "JS",
+        "Knockout",
+        "Angular",
+        "jQuery",
+        "AJAX"
+      ]
+    },
+    {
+      "isActive": false,
+      "name": "Покупатель 24",
+      "city": "Москва",
+      "country": "Россия",
+      "date": {
+        "from": 1401580800000,
+        "to": 1422748800000
+      },
+      "position": "Front-end Developer",
+      "description": "Я был единственным разработчиком части Front-end. Это была проектная работа. Я выполнил свою часть и мы закончили сотрудничество.",
+      "stack": [
+        "Cross Browsers",
+        "HTML5",
+        "CSS3",
+        "SASS",
+        "CoffeeScript",
+        "Vanilla JS",
+        "jQuery",
+        "AJAX"
+      ]
+    },
+    {
+      "isActive": false,
+      "name": "Filanko (hoster.ru)",
+      "site": "hoster.ru",
+      "city": "Москва",
+      "country": "Россия",
+      "date": {
+        "from": 1388534400000,
+        "to": 1388534400000
+      },
+      "position": "Front-end Developer",
+      "description": "Разработка админ-панели для клиентов. На проекте отсутствовали какие-либо фреймворки, только JS и jQuery. Вынужден был уехать из города по семейным обстоятельствам.",
+      "stack": ["Vanilla JS", "jQuery", "AJAX"]
+    },
+    {
+      "isActive": false,
+      "name": "Отклик",
+      "city": "Липецк",
+      "country": "Россия",
+      "date": {
+        "from": 1356998400000,
+        "to": 1385856000000
+      },
+      "position": "Front-end Developer",
+      "description": "Создание верстки, исправление ошибок и разработка простых анимаций. Выполнение заказов как частных лиц, так и от правительства. Это была сдельна работа.",
+      "stack": ["Vanilla JS", "jQuery", "AJAX"]
+    }
+  ]
 }

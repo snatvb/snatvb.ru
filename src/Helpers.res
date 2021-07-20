@@ -66,3 +66,15 @@ let rec __path = (obj: option<{..}>, path_: array<string>, currentIndex: int): o
 }
 
 let path = (obj, path) => __path(obj, path, 0)
+
+let filterOption = (a: option<'t>, predicate: 't => bool) => {
+  switch a {
+  | Some(a) =>
+    if predicate(a) {
+      Some(a)
+    } else {
+      None
+    }
+  | None => None
+  }
+}

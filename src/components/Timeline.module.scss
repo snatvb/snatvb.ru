@@ -1,0 +1,121 @@
+@import '../styles/variables.scss';
+
+.base {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  $left-space-size: 40px;
+  position: relative;
+  display: flex;
+}
+
+.timeline {
+  $left-space-size: 40px;
+  flex: 0 0 $left-space-size;
+  position: relative;
+  width: $left-space-size;
+
+  & + & {
+    padding-top: 20px;
+  }
+
+  &.active {
+    &::after {
+      background-color: $primary-color-darken;
+    }
+  }
+
+  &::after,
+  &::before {
+    position: absolute;
+    content: '';
+    display: block;
+  }
+
+  &::before {
+    left: $left-space-size * 0.5;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 1px;
+    background-color: $primary-color-darken;
+  }
+
+  &::after {
+    $size: 16px;
+    $border-size: 2px;
+    border: $border-size solid $primary-color-darken;
+    top: 50%;
+    transform: translateY(-50%);
+    left: $left-space-size * 0.5 - $size * 0.5 - $border-size * 0.5;
+    width: $size;
+    height: $size;
+    background-color: $background-color;
+    border-radius: 999px;
+  }
+}
+
+.name {
+  font-size: 24px;
+  font-weight: 100;
+  margin: 0;
+}
+
+.location {
+  font-size: 14px;
+  color: $secondary-color;
+}
+
+.work {
+  padding: 30px;
+}
+
+.date {
+  flex: 0 0 220px;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 13px;
+
+  &-to {
+    display: flex;
+    align-items: center;
+
+    &::before {
+      margin: 0 12px;
+      display: block;
+      content: '';
+      width: 12px;
+      height: 1px;
+      background-color: $text-color;
+    }
+  }
+
+  &-from {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.position {
+  font-size: 18px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-weight: 300;
+}
+
+.stack {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 12px;
+  margin: 0 -5px;
+
+  &-item {
+    padding: 2px 4px;
+    background-color: $primary-color-darken;
+    color: $background-color;
+    border-radius: 3px;
+    margin: 5px;
+  }
+}

@@ -13,9 +13,17 @@ let genTextsByLocale = (locale: locale): option<{..}> => {
   Js.undefinedToOption(%raw(`locales[locale]`))
 }
 
-let unknownString = "UNKNOWN_STRING"
+type readed
+let unknownString: readed = %raw(`"UNKNOWN_STRING"`)
+// let unknownString = "UNKNOWN_STRING"
 
-let read = (obj: {..}, path: array<string>): string => {
+external toFloat: readed => float = "%identity"
+external toInt: readed => int = "%identity"
+external toArray: readed => array<readed> = "%identity"
+external toObject: readed => {..} = "%identity"
+external toString: readed => string = "%identity"
+
+let read = (obj: {..}, path: array<string>): readed => {
   switch Helpers.path(Some(obj), path) {
   | Some(value) => value
   | None => unknownString

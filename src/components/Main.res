@@ -14,7 +14,6 @@ let make = () => {
       (),
     ),
   )
-  Js.log(url.path->Belt.List.reduce("", Js.String.concat))
 
   <div className={styles["base"]}>
     <header className={styles["header"]}> <Menu /> </header>

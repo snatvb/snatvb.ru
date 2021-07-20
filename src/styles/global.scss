@@ -28,26 +28,6 @@ body,
   top: 0;
   width: 100%;
   height: 100%;
-
-  &-enter {
-    opacity: 0;
-    transform: scale(1.1);
-
-    &-active {
-      opacity: 1;
-      transform: scale(1);
-      transition: opacity 3000ms, transform 3000ms;
-    }
-  }
-
-  &-exit {
-    opacity: 1;
-
-    &-active {
-      opacity: 0;
-      transition: opacity 3000ms;
-    }
-  }
 }
 
 * {
