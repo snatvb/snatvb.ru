@@ -27,15 +27,25 @@ let make = React.memo(() => {
     <div className={styles["elements"]}>
       <ul>
         <li>
-          <NavLink
-            href="https://t.me/snatvb" title="Telegram" target="blank" className={styles["link"]}>
+          <a
+            href="https://github.com/snatvb"
+            title="Github"
+            target="blank"
+            className={styles["link"]}>
+            <Icon.Github
+              className={cx([styles["icon"], styles["small"], styles["solid"], styles["github"]])}
+            />
+          </a>
+        </li>
+        <li>
+          <a href="https://t.me/snatvb" title="Telegram" target="blank" className={styles["link"]}>
             <Icon.Solid.Telegram
               className={cx([styles["icon"], styles["small"], styles["solid"]])}
             />
-          </NavLink>
+          </a>
         </li>
         <li>
-          <NavLink
+          <a
             href="https://www.linkedin.com/in/snatvb/"
             title="LinkedIn Andrey Avsenin"
             target="blank"
@@ -43,7 +53,7 @@ let make = React.memo(() => {
             <Icon.Solid.LinkedIn
               className={cx([styles["icon"], styles["small"], styles["solid"]])}
             />
-          </NavLink>
+          </a>
         </li>
       </ul>
     </div>
