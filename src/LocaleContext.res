@@ -35,6 +35,8 @@ let read = (obj: {..}, path: array<string>): readed => {
 let get = (locale: locale, path: array<string>) =>
   locale->genTextsByLocale->Belt.Option.mapWithDefault(unknownString, read(_, path))
 
+let getAsReactStr = (locale, path) => locale->get(path)->toString->React.string
+
 type context = {
   locale: locale,
   changeLocale: locale => unit,

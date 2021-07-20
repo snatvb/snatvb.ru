@@ -8,7 +8,7 @@ let make = React.memo(() => {
   let {locale} = LocaleContext.useLocaleContext()
   <div className={styles["base"]}>
     <div className={styles["photo-container"]}>
-      <Photo size={photoSize} src={photoSrc} className={styles["photo"]} />
+      <PhotoRaining size={photoSize} src={photoSrc} className={styles["photo"]} />
     </div>
     <div className={styles["body"]}>
       <section className={styles["content"]}>

@@ -1,7 +1,11 @@
 {
   "author": {
     "name": "Andrew Avsenin",
-    "description": "UI Team-Lead Wargaming"
+    "description": "UI Team-Lead Wargaming",
+    "about": {
+      "short-story": "I have wanted to make games when I was six years old. That's when I found out who made them. Then I told — \"I'll be a programmer.\" ",
+      "story-continue": "When I turned 14 I became learning programming and I still do it. I am team leader and teach my employees how to write simple and supportable code. I like a lot functional programming. I wrote code in languages such as Elm, Haskell, and I made this site with ReScript. I like safe code, but also I like performance code — that's how I fell in love Rust. I have experience with a lot of programming languages: JavaScript, TypeScript, ReScript, Elm, Haskell, Rust, Python, C#, Java, C++, Pawn (it's dialect of C), Object Pascal, Perl. Just I like programming and evolving. I like science, digital drawing, UX, 3D, video making, and much more."
+    }
   },
   "now-date": "Now",
   "works": [

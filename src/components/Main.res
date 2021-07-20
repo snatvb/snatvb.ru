@@ -7,10 +7,10 @@ let make = () => {
   let transitions = RSpring.useTransition(
     url,
     RSpring.makeOptions(
-      ~from=ReactDOM.Style.make(~opacity="0", ()),
-      ~enter=ReactDOM.Style.make(~opacity="1", ()),
+      ~from=ReactDOM.Style.make(~opacity="0", ~transform="scale(1.1)", ()),
+      ~enter=ReactDOM.Style.make(~opacity="1", ~transform="scale(1)", ()),
       ~leave=ReactDOM.Style.make(~opacity="0", ()),
-      ~config=Some(RSpring.makeConfig(~duration=150, ())),
+      ~config=Some(RSpring.makeConfig(~duration=200, ())),
       (),
     ),
   )
@@ -24,11 +24,12 @@ let make = () => {
             {switch item["path"] {
             | list{} => <Home />
             | list{"deal"} => <Deal />
-            | _ => <Home />
+            | _ => <About />
             }}
           </RSpring.Animated.Div>
         })}
       </div>
+      <div className={styles["in-dev"]}> {React.string("Still development")} </div>
     </main>
   </div>
 }
