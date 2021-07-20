@@ -18,7 +18,7 @@ let make = () => {
 
   let onAimationDone = () => setAnimationDone(_ => true)
 
-  <LocaleContext.Provider value={LocaleContext.initialContext.locale}>
+  <LocaleContext.Provider>
     {if !animationDone {
       <Greeting onAimationDone />
     } else {

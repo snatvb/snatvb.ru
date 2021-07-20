@@ -23,6 +23,8 @@ external toArray: readed => array<readed> = "%identity"
 external toObject: readed => {..} = "%identity"
 external toString: readed => string = "%identity"
 
+let storageKey = "locale"
+
 let read = (obj: {..}, path: array<string>): readed => {
   switch Helpers.path(Some(obj), path) {
   | Some(value) => value
@@ -43,12 +45,36 @@ let initialContext: context = {locale: #en, changeLocale: _ => ()}
 let context = React.createContext(initialContext)
 
 module Provider = {
+  let systemLocale =
+    %raw(`navigator.language || navigator.userLanguage`)
+    ->Js.String2.split("-")
+    ->Belt.Array.get(0)
+    ->Belt.Option.getWithDefault("en")
+    ->Js.String2.toLocaleLowerCase
+
+  let readFromStorage = _ =>
+    Dom_storage2.getItem(Dom.Storage2.localStorage, storageKey)
+    ->Helpers.optionOr(systemLocale)
+    ->Belt.Option.flatMap((str): option<locale> => {
+      switch str {
+      | "en" => Some(#en)
+      | "ru" => Some(#ru)
+      | _ => None
+      }
+    })
+    ->Belt.Option.getWithDefault(#en)
+
   let provider = React.Context.provider(context)
 
   @react.component
-  let make = (~value, ~children) => {
-    let (locale, setLocale) = React.useState(_ => value)
+  let make = (~children) => {
+    let (locale, setLocale) = React.useState(readFromStorage)
     let changeLocale = loc => setLocale(_ => loc)
+    React.useEffect1(() => {
+      Js.log(locale)
+      Dom.Storage2.setItem(Dom.Storage2.localStorage, storageKey, (locale :> string))
+      None
+    }, [locale])
 
     React.createElement(
       provider,

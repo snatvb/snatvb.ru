@@ -78,3 +78,10 @@ let filterOption = (a: option<'t>, predicate: 't => bool) => {
   | None => None
   }
 }
+
+let optionOr = (a: option<'t>, b: 't) => {
+  switch a {
+  | Some(a) => Some(a)
+  | None => Some(b)
+  }
+}
