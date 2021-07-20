@@ -4,7 +4,7 @@ open CX
 @react.component
 let make = React.memo(() => {
   <aside className={styles["base"]}>
-    <Logo className={styles["logo"]} />
+    <div className={styles["top"]}> <Logo className={styles["logo"]} /> <LanguageSelector /> </div>
     <nav className={styles["elements"]}>
       <ul>
         <li>

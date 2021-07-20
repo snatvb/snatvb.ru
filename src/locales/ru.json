@@ -1,6 +1,9 @@
 {
-  "name": "Андрей Авсенин",
-  "now-date": "Now",
+  "author": {
+    "name": "Andrew Avsenin",
+    "description": "UI Team-Lead Wargaming"
+  },
+  "now-date": "По сейчас",
   "works": [
     {
       "isActive": true,
