@@ -85,3 +85,8 @@ let optionOr = (a: option<'t>, b: 't) => {
   | None => Some(b)
   }
 }
+
+let joinList = (list: list<string>, separator: string) =>
+  list
+  ->Belt.List.reduce("", (acc, str) => `${acc}${separator}${str}`)
+  ->Js.String2.sliceToEnd(~from=1)

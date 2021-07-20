@@ -73,7 +73,6 @@ module Provider = {
     let (locale, setLocale) = React.useState(readFromStorage)
     let changeLocale = loc => setLocale(_ => loc)
     React.useEffect1(() => {
-      Js.log(locale)
       Dom.Storage2.setItem(Dom.Storage2.localStorage, storageKey, (locale :> string))
       None
     }, [locale])
