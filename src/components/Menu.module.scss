@@ -34,11 +34,14 @@
     > li {
       cursor: pointer;
       list-style: none;
-      text-align: center;
-      padding: 12px;
 
-      &:hover {
-        background-color: lighten($color: $secondary-color, $amount: 4);
+      > .link {
+        display: block;
+        padding: 12px;
+        text-align: center;
+        &:hover {
+          background-color: lighten($color: $secondary-color, $amount: 4);
+        }
       }
     }
   }
