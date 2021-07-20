@@ -29,7 +29,6 @@ module Item = {
   @react.component
   let make = (
     ~name: string,
-    ~isActive: bool,
     ~position: string,
     ~date: date,
     ~stack: array<string>,
@@ -38,11 +37,13 @@ module Item = {
     ~description: string,
   ) => {
     let {locale} = LocaleContext.useLocaleContext()
+    let dateTo = date.to_->convertDateTo
+    let isActive = dateTo == #Now
     <article
       className={cx([styles["item"], Some(styles["active"])->Helpers.filterOption(_ => isActive)])}>
       <div className={styles["date"]}>
         <div className={styles["date-from"]}> <Date timestamp={date.from} /> </div>
-        {switch date.to_->convertDateTo {
+        {switch dateTo {
         | #Now =>
           <div className={styles["date-to"]}>
             {locale->LocaleContext.get(["now-date"])->LocaleContext.toString->React.string}

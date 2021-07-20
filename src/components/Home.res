@@ -1,5 +1,5 @@
 @module("./Home.module.scss") external styles: {..} = "default"
-@module("./photo.png") external photoSrc: string = "default"
+@module("./images/home_photo.png") external photoSrc: string = "default"
 
 let photoSize: Common.size = {width: 810.0, height: 1080.0}
 

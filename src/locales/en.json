@@ -10,7 +10,6 @@
   "now-date": "Now",
   "works": [
     {
-      "isActive": true,
       "name": "Wargaming (CООО Гейм Стрим)",
       "site": "wargaming.net",
       "city": "Minsk",
@@ -32,7 +31,6 @@
       ]
     },
     {
-      "isActive": false,
       "name": "Yzer Lab",
       "city": "Moscow",
       "country": "Russia",
@@ -60,7 +58,6 @@
       ]
     },
     {
-      "isActive": false,
       "name": "Покорми Зверя",
       "city": "Moscow",
       "country": "Russia",
@@ -73,7 +70,6 @@
       "stack": ["JS", "jQuery"]
     },
     {
-      "isActive": false,
       "name": "DigitalWand",
       "city": "Moscow",
       "country": "Russia",
@@ -87,7 +83,6 @@
       "stack": ["JS", "Knockout", "Angular", "React", "Ionic"]
     },
     {
-      "isActive": false,
       "name": "ArtLand",
       "city": "Lipetsk",
       "country": "Russia",
@@ -111,7 +106,6 @@
       ]
     },
     {
-      "isActive": false,
       "name": "Покупатель 24",
       "city": "Moscow",
       "country": "Russia",
@@ -133,7 +127,6 @@
       ]
     },
     {
-      "isActive": false,
       "name": "Filanko (hoster.ru)",
       "site": "hoster.ru",
       "city": "Moscow",
@@ -147,7 +140,6 @@
       "stack": ["Vanilla JS", "jQuery", "AJAX"]
     },
     {
-      "isActive": false,
       "name": "Отклик",
       "city": "Lipetsk",
       "country": "Russia",
