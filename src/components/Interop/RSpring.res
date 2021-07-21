@@ -1,8 +1,5 @@
 module Animated = {
   type t = {"div": React.component<ReactDOM.Props.domProps>}
-  // @module("react-spring")
-  // external @scope("default")
-  // animated: t = "animated"
   %%raw(`import { animated } from '@react-spring/web'`)
 
   module Div = {
@@ -45,5 +42,3 @@ type transitions<'a, 'b> = @uncurry ((('a, 'b) => React.element) => React.elemen
 
 @module("@react-spring/web") @scope("default")
 external useTransition: ('t, options) => transitions<'a, 'b> = "useTransition"
-
-// @send external map: (transitions, mapItem => React.element) => React.element = "map"

@@ -13,7 +13,12 @@ let make = React.memo(() => {
     <div className={styles["body"]}>
       <section className={styles["content"]}>
         <h1 className={styles["name-title"]}>
-          {locale->LocaleContext.get(["author", "name"])->LocaleContext.toString->React.string}
+          {locale
+          ->LocaleContext.get(["author", "first-name"])
+          ->LocaleContext.toString
+          ->React.string}
+          <br />
+          {locale->LocaleContext.get(["author", "last-name"])->LocaleContext.toString->React.string}
         </h1>
         <h2 className={styles["author-description"]}>
           {locale
