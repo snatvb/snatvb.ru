@@ -1,8 +1,13 @@
 let unwrapId = id => id->Belt.Option.getWithDefault("")
 
 @react.component
-let make = React.memo((~className: option<string>=?, ~id: option<string>=?) => {
+let make = React.memo((
+  ~className: option<string>=?,
+  ~id: option<string>=?,
+  ~onClick: option<ReactEvent.Mouse.t => unit>=?,
+) => {
   <svg
+    ?onClick
     xmlns="http://www.w3.org/2000/svg"
     id={id->unwrapId}
     className={className->unwrapId}

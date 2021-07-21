@@ -38,14 +38,18 @@
   },
   "devDependencies": {
     "@jihchi/plugin-rescript": "^1.0.0",
+    "@snowpack/plugin-babel": "^2.1.7",
     "@snowpack/plugin-dotenv": "^2.1.0",
     "@snowpack/plugin-react-refresh": "^2.5.0",
     "@snowpack/plugin-sass": "^1.4.0",
+    "@snowpack/plugin-webpack": "^3.0.0",
     "bs-fetch": "^0.6.2",
     "bs-webapi": "^0.19.1",
+    "file-loader": "^6.2.0",
     "prettier": "^2.3.1",
     "rescript": "^9.1.4",
-    "snowpack": "~3.0"
+    "snowpack": "~3.0",
+    "snowpack-plugin-relative-css-urls": "^1.2.0"
   },
   "eslintConfig": {
     "ignorePatterns": [

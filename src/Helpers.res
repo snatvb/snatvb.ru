@@ -90,3 +90,16 @@ let joinList = (list: list<string>, separator: string) =>
   list
   ->Belt.List.reduce("", (acc, str) => `${acc}${separator}${str}`)
   ->Js.String2.sliceToEnd(~from=1)
+
+let animationGreetingKey = "greetingDone"
+
+let loadNeedGreeting = () =>
+  Dom.Storage2.localStorage
+  ->Dom.Storage2.getItem(animationGreetingKey)
+  ->Belt.Option.mapWithDefault(false, x => x == "true")
+
+let setNeedGreeting = animationDone =>
+  Dom.Storage2.localStorage->Dom.Storage2.setItem(
+    animationGreetingKey,
+    animationDone ? "true" : "false",
+  )

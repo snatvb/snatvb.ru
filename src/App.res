@@ -12,9 +12,16 @@ module Routes = {
   }
 }
 
+let animationGreetingKey = "greetingDone"
+
 @react.component
 let make = () => {
-  let (animationDone, setAnimationDone) = React.useState(_ => true)
+  let (animationDone, setAnimationDone) = React.useState(_ => Helpers.loadNeedGreeting())
+
+  React.useEffect1(() => {
+    Helpers.setNeedGreeting(animationDone)
+    None
+  }, [animationDone])
 
   let onAimationDone = () => setAnimationDone(_ => true)
 

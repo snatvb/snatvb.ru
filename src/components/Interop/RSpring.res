@@ -1,7 +1,9 @@
 module Animated = {
   type t = {"div": React.component<ReactDOM.Props.domProps>}
-  @module("react-spring") @scope("default")
-  external animated: t = "animated"
+  // @module("react-spring")
+  // external @scope("default")
+  // animated: t = "animated"
+  %%raw(`import { animated } from '@react-spring/web'`)
 
   module Div = {
     @obj
@@ -13,7 +15,7 @@ module Animated = {
       unit,
     ) => ReactDOM.Props.domProps = ""
 
-    let make = animated["div"]
+    let make = %raw(`animated.div`)
   }
 }
 
@@ -41,7 +43,7 @@ type mapItem = {
 
 type transitions<'a, 'b> = @uncurry ((('a, 'b) => React.element) => React.element)
 
-@module("react-spring") @scope("default")
+@module("@react-spring/web") @scope("default")
 external useTransition: ('t, options) => transitions<'a, 'b> = "useTransition"
 
 // @send external map: (transitions, mapItem => React.element) => React.element = "map"

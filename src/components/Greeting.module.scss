@@ -30,18 +30,19 @@ $logo-color: $text-color;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    -webkit-mask-image: url('logo.svg');
+    -webkit-mask-image: url(./images/logo.svg);
     -webkit-mask-mode: match-source;
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-position: center;
     -webkit-mask-size: contain;
-    mask-image: url('logo.svg');
+    mask-image: url(./images/logo.svg);
     mask-mode: match-source;
     mask-repeat: no-repeat;
     mask-position: center;
     mask-size: contain;
     opacity: 0;
-    animation: logoHide $hide-time cubic-bezier(0.2, 0.1, 0.4, 0.6) $hide-delay forwards;
+    animation: logoHide $hide-time cubic-bezier(0.2, 0.1, 0.4, 0.6) $hide-delay
+      forwards;
   }
 }
 

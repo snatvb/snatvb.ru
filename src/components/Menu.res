@@ -3,8 +3,15 @@ open CX
 
 @react.component
 let make = React.memo(() => {
+  let onClick = _ => {
+    Helpers.setNeedGreeting(false)
+    %raw(`window.location = '/'`)
+  }
+
   <aside className={styles["base"]}>
-    <div className={styles["top"]}> <Logo className={styles["logo"]} /> <LanguageSelector /> </div>
+    <div className={styles["top"]}>
+      <Logo className={styles["logo"]} onClick /> <LanguageSelector />
+    </div>
     <nav className={styles["elements"]}>
       <ul>
         <li>
