@@ -1,6 +1,12 @@
 @module("./Main.module.scss") external styles: {..} = "default"
 open CX
 
+type doc
+@val external document: doc = "document"
+@set external setTitle: (doc, string) => unit = "title"
+
+let name = "Anrew Avsenin"
+
 @react.component
 let make = () => {
   let url = RescriptReactRouter.useUrl()
@@ -15,6 +21,16 @@ let make = () => {
     ),
   )
 
+  React.useEffect1(() => {
+    switch url.path {
+    | list{"deal"} => setTitle(document, `${name} — Experience`)
+    | list{"about"} => setTitle(document, `${name} — About`)
+    | _ => setTitle(document, name)
+    }
+
+    None
+  }, [url])
+
   <div className={styles["base"]}>
     <header className={styles["header"]}> <Menu /> </header>
     <main className={cx([styles["content"], Some("full-size")])}>
@@ -24,7 +40,8 @@ let make = () => {
             {switch item["path"] {
             | list{} => <Home />
             | list{"deal"} => <Deal />
-            | _ => <About />
+            | list{"about"} => <About />
+            | _ => <Home />
             }}
           </RSpring.Animated.Div>
         })}
