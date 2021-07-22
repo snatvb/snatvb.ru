@@ -5,7 +5,7 @@ type doc
 @val external document: doc = "document"
 @set external setTitle: (doc, string) => unit = "title"
 
-let name = "Anrew Avsenin"
+let name = "Andrew Avsenin"
 
 @react.component
 let make = () => {
