@@ -26,10 +26,12 @@ let make = () => {
   let onAimationDone = () => setAnimationDone(_ => true)
 
   <LocaleContext.Provider>
-    {if !animationDone {
-      <Greeting onAimationDone />
-    } else {
-      <Routes />
-    }}
+    <MediaContext.Provider>
+      {if !animationDone {
+        <Greeting onAimationDone />
+      } else {
+        <Routes />
+      }}
+    </MediaContext.Provider>
   </LocaleContext.Provider>
 }
