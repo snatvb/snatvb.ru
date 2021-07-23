@@ -11,6 +11,8 @@ let tap = Helpers.tap
 
 let pi2 = Js.Math._PI *. 2.0
 
+let canlcSideFactor = (w, h) => Js.Math.min_float(w, h) /. 1080.0
+
 module Particle = {
   type t = {
     mutable x: float,
@@ -22,14 +24,22 @@ module Particle = {
     mutable py: int,
   }
 
+  let getRandVelocity = sideFactor => {
+    Js.Math.random() *. (1.25 *. sideFactor)
+  }
+
   let make = ({canvasSize}) => {
-    let x = Js.Math.random() *. canvasSize.width->Belt.Int.toFloat
+    let sideFactor = canlcSideFactor(
+      canvasSize.width->Belt.Int.toFloat,
+      canvasSize.height->Belt.Int.toFloat,
+    )
+    let x = Js.Math.random() *. (canvasSize.width->Belt.Int.toFloat -. 1.0)
     {
       x: x,
       y: 0.0,
       speed: 0.0,
-      velocity: Js.Math.random() *. 1.25,
-      size: Js.Math.random() *. 1.5 +. 1.0,
+      velocity: getRandVelocity(sideFactor),
+      size: Js.Math.random() *. (1.5 *. sideFactor) +. 1.0,
       px: x->Js.Math.floor,
       py: 0,
     }
@@ -78,8 +88,13 @@ module Particle = {
 // }
 
 let generateParticles = (count, opts) => {
+  let factor = canlcSideFactor(
+    opts.canvasSize.width->Belt.Int.toFloat,
+    opts.canvasSize.height->Belt.Int.toFloat,
+  )
+  let factorCount = (Belt.Int.toFloat(count) *. factor ** factor)->Belt.Float.toInt
   let particles = []
-  for i in 0 to count {
+  for i in 0 to factorCount {
     let _ = i
     let _ = Js.Array2.push(particles, Particle.make(opts))
   }

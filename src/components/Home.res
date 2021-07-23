@@ -1,14 +1,36 @@
 @module("./Home.module.scss") external styles: {..} = "default"
 @module("./images/home_photo.png") external photoSrc: string = "default"
 
-let photoSize: Common.size = {width: 810.0, height: 1080.0}
+let photoDefaultSize: Common.size = {width: 810.0, height: 1080.0}
+
+let photoMediumSize: Common.size = {
+  width: photoDefaultSize.width /. 1.5,
+  height: photoDefaultSize.height /. 1.5,
+}
 
 @react.component
 let make = React.memo(() => {
-  let {locale} = LocaleContext.useLocaleContext()
+  let (photoSize, setPhotoSize) = React.useState(_ => photoDefaultSize)
+  let locale = LocaleContext.useLocale()
+  let windowSize = MediaContext.useMedia()
+
+  React.useEffect1(() => {
+    if windowSize.width > 1100 && windowSize.height > 700 {
+      setPhotoSize(_ => photoDefaultSize)
+    } else if windowSize.width > 700 {
+      setPhotoSize(_ => photoMediumSize)
+    }
+    None
+  }, [windowSize])
+
   <div className={styles["base"]}>
     <div className={styles["photo-container"]}>
-      <PhotoRaining size={photoSize} src={photoSrc} className={styles["photo"]} />
+      <PhotoRaining
+        size={photoSize}
+        src={photoSrc}
+        className={styles["photo"]}
+        key={photoSize.width->Belt.Float.toString ++ photoSize.height->Belt.Float.toString}
+      />
     </div>
     <div className={styles["body"]}>
       <section className={styles["content"]}>

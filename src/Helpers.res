@@ -3,6 +3,10 @@
 @get @scope("canvas") external getWidthf: Webapi__Canvas.Canvas2d.t => float = "width"
 @get @scope("canvas") external getHeight: Webapi__Canvas.Canvas2d.t => int = "height"
 @get @scope("canvas") external getHeightf: Webapi__Canvas.Canvas2d.t => float = "height"
+
+@set @scope("canvas") external setWidth: (Webapi__Canvas.Canvas2d.t, float) => unit = "width"
+@set @scope("canvas") external setHeight: (Webapi__Canvas.Canvas2d.t, float) => unit = "height"
+
 @val @scope("window")
 external requestAnimationFrame: (float => 'a) => int = "requestAnimationFrame"
 @val @scope("window")

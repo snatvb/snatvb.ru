@@ -52,10 +52,12 @@ let getMappedImage = ctx => {
   mappedImage
 }
 
-let work = (ctx: Canvas2d.t, src, particlesCount) => {
+let work = (ctx: Canvas2d.t, src, particlesCount, size) => {
   let image = Image.make()
-  let width = getWidth(ctx)
-  let height = getHeight(ctx)
+  setWidth(ctx, size.width)
+  setHeight(ctx, size.height)
+  let width = size.width->Belt.Float.toInt
+  let height = size.height->Belt.Float.toInt
   let rafId = ref(0)
   let mappedImage = ref([])
   let particles = Particles.make(particlesCount, {canvasSize: {width: width, height: height}})
@@ -96,17 +98,14 @@ let make = React.memo((
 ) => {
   let ref = React.useRef(Js.Nullable.null)
 
-  React.useEffect0(() =>
-    ref.current
-    ->Js.Nullable.toOption
-    ->Belt.Option.map(Webapi.Canvas.CanvasElement.getContext2d)
-    ->Belt.Option.flatMap(work(_, src, particlesCount))
+  React.useEffect1(
+    () =>
+      ref.current
+      ->Js.Nullable.toOption
+      ->Belt.Option.map(Webapi.Canvas.CanvasElement.getContext2d)
+      ->Belt.Option.flatMap(work(_, src, particlesCount, size)),
+    [size],
   )
 
-  <canvas
-    ?className
-    ref={ref->ReactDOM.Ref.domRef}
-    width={size.width->Belt.Float.toString}
-    height={size.height->Belt.Float.toString}
-  />
+  <canvas ?className ref={ref->ReactDOM.Ref.domRef} />
 })
