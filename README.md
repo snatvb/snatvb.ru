@@ -1,6 +1,6 @@
 # Getting started
 
-You can view a live site at [snatvb.ru](http://snatvb.ru)
+You can view a live site at [snatvb.ru](https://snatvb.ru)
 
 How to dev:
 
